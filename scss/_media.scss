@@ -1,0 +1,129 @@
+@media(min-width: 768px){
+	/* ====== COMMON STYLES ====== */
+
+	.download-button{
+		padding: 20px;
+	}
+
+	/* ====== HEADER ====== */
+
+	.header{
+		padding: 35px 20px 0 20px;
+
+		background-image: url("../img/header-bg-tablet.jpg");
+	}
+
+	.header__inner{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.header__top{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		margin-bottom: 180px;
+	}
+
+	.header__phrase{
+		display: block;
+	}
+
+	.header__slogun{
+		margin-bottom: 150px;
+
+		@include font(64px, 64px, #fff, uppercase);
+
+		&::before{
+			top: -121px;
+			height: 400px;
+		}
+	}
+
+	.header__downloads{
+		order: 1;
+	}
+
+	.header__button-text{
+		@include font(14px, 20px, null, null);
+
+		margin-left: 30px;
+	}
+
+	.header__sports{
+		margin-bottom: 90px;
+		padding: 0;
+	}
+
+	.header__sports-inner{
+		display: contents;
+	}
+
+	.header__sports-item{
+		font-size: 16px;
+	}	
+}
+
+
+/* ======================================================== */
+
+
+@media(min-width: 930px){
+	/* ====== COMMON STYLES ====== */
+
+	.download-button{
+		width: 300px;
+	}
+
+	/* ====== HEADER ====== */
+
+	.container{
+		margin: 0 auto;
+		width: 81.25%;
+
+		padding: 0 15px;
+	}
+
+	.header{
+		background-image: url("../img/header-bg-desctop.jpg");
+	}
+
+	.header__top{
+		margin-bottom: 270px;
+	}
+
+	.header__slogun{
+		margin: 0;
+		padding: 0;
+
+		@include font(90px, 90px, #fff, uppercase);
+
+		&::before{
+			left: -30%;
+			top: -100px;
+		}
+	}
+
+	.header__slogun-part{
+		padding: 0;
+	}
+
+	.header__downloads{
+		justify-content: center;
+	}
+
+	.header__download-button:first-child{
+		margin-right: 50px;
+	}
+
+	.header__sports{
+		width: 570px;
+		margin-left: auto;
+		margin-bottom: 160px;
+	}
+
+	.header__sports-item{
+		font-size: 14px;
+	}
+}

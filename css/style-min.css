@@ -378,6 +378,26 @@ template {
   font-display: swap;
 }
 
+.header__button-text, .header__phrase, .header__sports-item {
+  font-family: "Proxima Nova Light", sans-serif;
+  font-weight: 100;
+}
+
+body {
+  font-family: "Proxima Nova Regular", sans-serif;
+  font-weight: 400;
+}
+
+.header__button-text span {
+  font-family: "Proxima Nova Semibold", sans-serif;
+  font-weight: 600;
+}
+
+.header__slogun {
+  font-family: "Proxima Nova Bold", sans-serif;
+  font-weight: 700;
+}
+
 /* ======================== MY GLOBAL STYLES ======================== */
 html {
   box-sizing: border-box;
@@ -467,4 +487,233 @@ html {
   height: 100%;
 }
 
+body {
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  text-transform: none;
+}
+
 /* ====== COMMON STYLES ====== */
+/* download button styles */
+.download-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5e3db3;
+  border-radius: 50px;
+  padding: 15px;
+  width: 47%;
+}
+
+.download-button:hover {
+  background-color: #5e20fb;
+}
+
+.header__button-text {
+  font-size: 8px;
+  line-height: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.header__button-text span {
+  display: block;
+}
+
+/* end of download button styles */
+/* HEADER */
+.header {
+  height: 100vh;
+  background-image: url("../img/header-bg-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  padding-top: 35px;
+}
+
+.header__top {
+  margin-bottom: 140px;
+}
+
+.header__logo {
+  text-align: center;
+}
+
+.header__phrase {
+  display: none;
+  font-size: 14px;
+  line-height: 35px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.header__slogun {
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 120px;
+  padding: 0 10px;
+  font-size: 32px;
+  line-height: 32px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.header__slogun::before {
+  position: absolute;
+  content: "";
+  top: -60px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 220px;
+  width: 4px;
+  background-color: #5d3bb0;
+  transform: rotate(30deg);
+  z-index: 1;
+}
+
+.header__slogun-text {
+  position: relative;
+  z-index: 2;
+}
+
+.header__slogun-part {
+  display: block;
+  padding-right: 4px;
+  text-align: right;
+}
+
+.header__downloads {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin-bottom: 45px;
+}
+
+.header__sports {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 35px;
+}
+
+.header__sports-item {
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 15px;
+  color: #916ded;
+  text-transform: uppercase;
+}
+
+.header__sports-inner {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  /* ====== COMMON STYLES ====== */
+  .download-button {
+    padding: 20px;
+  }
+  /* ====== HEADER ====== */
+  .header {
+    padding: 35px 20px 0 20px;
+    background-image: url("../img/header-bg-tablet.jpg");
+  }
+  .header__inner {
+    display: flex;
+    flex-direction: column;
+  }
+  .header__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 180px;
+  }
+  .header__phrase {
+    display: block;
+  }
+  .header__slogun {
+    margin-bottom: 150px;
+    font-size: 64px;
+    line-height: 64px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .header__slogun::before {
+    top: -121px;
+    height: 400px;
+  }
+  .header__downloads {
+    order: 1;
+  }
+  .header__button-text {
+    font-size: 14px;
+    line-height: 20px;
+    margin-left: 30px;
+  }
+  .header__sports {
+    margin-bottom: 90px;
+    padding: 0;
+  }
+  .header__sports-inner {
+    display: contents;
+  }
+  .header__sports-item {
+    font-size: 16px;
+  }
+}
+
+/* ======================================================== */
+@media (min-width: 930px) {
+  /* ====== COMMON STYLES ====== */
+  .download-button {
+    width: 300px;
+  }
+  /* ====== HEADER ====== */
+  .container {
+    margin: 0 auto;
+    width: 81.25%;
+    padding: 0 15px;
+  }
+  .header {
+    background-image: url("../img/header-bg-desctop.jpg");
+  }
+  .header__top {
+    margin-bottom: 270px;
+  }
+  .header__slogun {
+    margin: 0;
+    padding: 0;
+    font-size: 90px;
+    line-height: 90px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .header__slogun::before {
+    left: -30%;
+    top: -100px;
+  }
+  .header__slogun-part {
+    padding: 0;
+  }
+  .header__downloads {
+    justify-content: center;
+  }
+  .header__download-button:first-child {
+    margin-right: 50px;
+  }
+  .header__sports {
+    width: 570px;
+    margin-left: auto;
+    margin-bottom: 160px;
+  }
+  .header__sports-item {
+    font-size: 14px;
+  }
+}

@@ -11,8 +11,163 @@ html{
 }
 
 body{
-
+	@include font;
+	@extend %ProximaNovaRegular;
 }
 
 /* ====== COMMON STYLES ====== */
 
+/* download button styles */
+
+.download-button{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background-color: #5e3db3;
+
+	border-radius: 50px;
+
+	padding: 15px;
+
+	width: 47%;
+
+	&:hover{
+		background-color: #5e20fb;
+	}
+}
+
+.header__button-text{
+	@extend %ProximaNovaLight;
+	@include font(8px, 10px, #fff, uppercase);
+	text-align: left;
+
+	margin-left: 10px;
+
+	span{
+		display: block;
+
+		@extend %ProximaNovaSemibold;
+	}
+}
+
+/* end of download button styles */
+
+/* HEADER */
+
+.header{
+	height: 100vh;
+
+	background-image: url("../img/header-bg-mobile.jpg");
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
+
+	padding-top: 35px;
+}
+
+.header__top{
+	margin-bottom: 140px;
+}
+
+.header__logo{
+	text-align: center;
+}
+
+.header__phrase{
+	display: none;
+
+	@extend %ProximaNovaLight;
+	@include font(14px, 35px, #fff, uppercase);
+}
+
+.header__slogun{
+	position: relative;
+
+	margin: 0 auto;
+	margin-bottom: 120px;
+
+	padding: 0 10px;
+
+	@extend %ProximaNovaBold;
+	@include font(32px, 32px, #fff, uppercase);
+
+	&::before{
+		position: absolute;
+		content: "";
+		top: -60px;
+		left: 0;
+		right: 0;
+
+		margin-left: auto;
+		margin-right: auto;
+
+		height: 220px;
+		width: 4px;
+
+		background-color: #5d3bb0;
+
+		transform: rotate(30deg);
+
+		z-index: 1;
+	}
+}
+
+.header__slogun-text{
+	position: relative;
+	z-index: 2;
+}
+
+.header__slogun-part{
+	display: block;
+
+	padding-right: 4px;
+
+	text-align: right;	
+}
+
+.header__downloads{
+	display: flex;
+	justify-content: space-between;
+
+	padding: 0 10px;
+
+	margin-bottom: 45px;
+}
+
+.header__sports{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	padding: 0 35px;
+}
+
+.header__sports-item{
+	margin-bottom: 10px;
+
+	@extend %ProximaNovaLight;
+	@include font(12px, 15px, #916ded, uppercase);
+}
+
+.header__sports-inner{
+	display: flex;
+	justify-content: space-around;
+
+	width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import "media";
