@@ -1,0 +1,6 @@
+@mixin font($fz: 16px, $lh: 20px, $color: #000000, $tt: none){
+	font-size: $fz;
+	line-height: $lh;
+	color: $color;
+	text-transform: $tt;
+}
