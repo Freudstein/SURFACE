@@ -17,6 +17,50 @@ body{
 
 /* ====== COMMON STYLES ====== */
 
+.big-heading{
+	@extend %ProximaNovaBold;
+	@include font(50px, 60px, #e7e7e7, uppercase);
+}
+
+/* slider styles */
+
+.slick-list{
+	overflow: hidden;
+}
+
+.slick-track{
+	display: flex;
+}
+
+.slick-dots{
+	position: absolute;
+	bottom: 30px;
+	@include pseudoCenter;
+
+	width: 55px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	li{
+		font-size: 0;
+
+		width: 10px;
+		height: 10px;
+
+		background-color: #d8d8d8;
+
+		border-radius: 50%;
+
+		cursor: pointer;
+	}
+
+	li.slick-active{
+		background-color: #5c37b2;
+	}
+}
+
 /* download button styles */
 
 .download-button{
@@ -32,12 +76,14 @@ body{
 
 	width: 47%;
 
+	box-shadow: 0px 16px 24px 0px rgba(10, 13, 53, .9);
+
 	&:hover{
 		background-color: #5e20fb;
 	}
 }
 
-.header__button-text{
+.download-button__text{
 	@extend %ProximaNovaLight;
 	@include font(8px, 10px, #fff, uppercase);
 	text-align: left;
@@ -56,8 +102,6 @@ body{
 /* HEADER */
 
 .header{
-	height: 100vh;
-
 	background-image: url("../img/header-bg-mobile.jpg");
 	background-repeat: no-repeat;
 	background-position: center top;
@@ -96,11 +140,7 @@ body{
 		position: absolute;
 		content: "";
 		top: -60px;
-		left: 0;
-		right: 0;
-
-		margin-left: auto;
-		margin-right: auto;
+		@include pseudoCenter;
 
 		height: 220px;
 		width: 4px;
@@ -141,6 +181,7 @@ body{
 	flex-wrap: wrap;
 
 	padding: 0 35px;
+	padding-bottom: 20px;
 }
 
 .header__sports-item{
@@ -157,17 +198,423 @@ body{
 	width: 100%;
 }
 
+/* ATHLETS */
+
+.athlets{
+	position: relative;
+
+	padding-top: 25px;
+}
+
+.athlets__big-heading{
+	margin-bottom: 230px;
+	padding: 0 20px;
+}
+
+.athlets__sportsman{
+	position: absolute;
+	top: 90px;
+	@include pseudoCenter;
+
+	text-align: center;
+
+	z-index: 1;
+
+	&::before{
+		content: "";
+		position: absolute;
+		top: -25px;
+		@include pseudoCenter;
+
+		height: 275px;
+		width: 3px;
+
+		background-color: #916fe9;
+
+		transform: rotate(45deg);
+	}	
+}
+
+.athlets__picture{
+	position: relative;
+
+	&::after,
+	&::before{
+		content: "";
+		position: absolute;
+		top: -250px;
+		left: 20px;
+
+		width: 3px;
+		height: 21px;
+
+		background-color: #5e3db3;		
+	}
+
+	&::after{
+		box-shadow: -25px -15px 0 0 #cec4e8;
+	}
+
+	&::before{
+		transform: rotate(90deg);
+
+		box-shadow: -15px 25px 0 0 #cec4e8;
+	}
+}
+
+.athlets__wrapper{
+	position: relative;
+}
+
+.athlets__slider{
+background-color: #f5f4f9;
+}
+
+.athlets__slide{
+	padding: 75px 20px 70px;	
+}
+
+.athlets__slide-heading{
+	margin-bottom: 25px;
+
+	@extend %ProximaNovaBold;
+	@include font(28px, 34px, #c1c1c1, uppercase);
+
+	display: flex;
+	align-items: flex-start;
+}
+
+.athlets__number{
+	position: relative;
+
+	margin-right: 10px;
+
+	@include font(14px, 28px, #000, null);
+
+	&::after{
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		width: 100%;
+		height: 4px;
+
+		border-radius: 50px;
+
+		background-color: #5e3db3;
+	}
+}
+
+.athlets__slide-text{
+	@include font(15px, 18px, null, null);
+}
+
+/* ====== PLAYERS ====== */
+
+.players{
+	position: relative;
+
+	padding-top: 25px;
+}
+
+.players__big-heading{
+	margin-bottom: 230px;
+	padding: 0 20px;
+}
+
+.players__sportsman{
+	position: absolute;
+	top: 90px;
+	@include pseudoCenter;
+
+	text-align: center;
+
+	z-index: 1;
+
+	&::before{
+		content: "";
+		position: absolute;
+		top: -25px;
+		@include pseudoCenter;
+
+		height: 275px;
+		width: 3px;
+
+		background-color: #916fe9;
+
+		transform: rotate(45deg);
+	}	
+}
+
+.players__picture{
+	position: relative;
+
+	&::after{
+		content: "";
+		position: absolute;
+		top: -210px;
+		left: 76px;
+
+		width: 3px;
+		height: 21px;
+
+		background-color: #5e3db3;
+
+		box-shadow: -25px -15px 0 0 #cec4e8;
+	}
+
+	&::before{
+		content: "";
+		position: absolute;
+		top: -210px;
+		left: 76px;
+
+		width: 3px;
+		height: 21px;
+
+		background-color: #5e3db3;
+
+		transform: rotate(90deg);
+
+		box-shadow: -15px 25px 0 0 #cec4e8;
+	}
+}
+
+.players__wrapper{
+	position: relative;
+}
+
+.players__slider{
+	background-color: #f5f4f9;
+}
+
+.players__slide{
+	padding: 75px 20px 70px;	
+}
+
+.players__slide-heading{
+	margin-bottom: 25px;
+
+	@extend %ProximaNovaBold;
+	@include font(28px, 34px, #c1c1c1, uppercase);
+
+	display: flex;
+	align-items: flex-start;
+}
+
+.players__number{
+	position: relative;
+
+	margin-right: 10px;
+
+	@include font(14px, 28px, #000, null);
+
+	&::after{
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		width: 100%;
+		height: 4px;
+
+		border-radius: 50px;
+
+		background-color: #5e3db3;
+	}
+}
+
+.players__slide-text{
+	@include font(15px, 18px, null, null);
+}
+
+/* ====== SNIPPETS ====== */
+
+.snippets__image{
+	height: auto;
+	width: 100%;
+
+	line-height: 0;
+}
+
+.snippets__info{
+	position: relative;
+
+	padding: 35px 6% 50px;
+}
+
+.snippets__big-heading{
+	margin-bottom: 20px;
+	margin-left: -3px;
+}
+
+.snippets__text{
+	padding-right: 6%;
+	margin-bottom: 20px;
 
 
+	letter-spacing: .75px;
+}
 
+.snippets__underline{
+	width: 22px;
+	height: 5px;
 
+	background-color: #5e38b6;
 
+	border-radius: 50px;
+}
 
+.snippets__number{
+	position: absolute;
+	top: -70px;
 
+	@extend %ProximaNovaBold;
+	@include font(14px, 34px, #fff, null);
 
+	background-color: #5e3db3;
 
+	padding: 27px 38px;
 
+	&::after{
+		content: "";
+		position: absolute;
+		bottom: 30px;
+		@include pseudoCenter;
 
+		width: 16px;
+		height: 4px;
 
+		background-color: #8f78ca;
+		border-radius: 50px;
+	}
+}
+
+/* ====== FOOTER ====== */
+
+.footer{	
+	padding-top: 95px;
+
+	background-image: url("../img/footer-bg-mobile.jpg");
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
+
+	text-align: center;
+}
+
+.footer__logo{
+	margin-bottom: 55px;
+
+	text-align: center;
+}
+
+.footer__download{
+	display: inline-block;
+	margin: 0 auto;
+	position: relative;
+
+	&::before,
+	&::after{
+		content: "";
+		position: absolute;
+
+		width: 4px;
+
+		background-color: #936aed;
+
+		transform: rotate(35deg);
+	}
+
+	&::before{		
+		top: -11px;
+		left: 29px;
+		
+		height: 90px;				
+	}
+
+	&::after{
+		content: "";
+		position: absolute;
+		top: -34px;
+		right: 111px;
+
+		width: 4px;
+		height: 155px;
+
+		background-color: #936aed;
+
+		transform: rotate(35deg);	
+	}
+}
+
+.footer__download-inner{
+	position: relative;
+	z-index: 1;
+}
+
+.footer__heading{
+	margin-bottom: 10px;
+
+	@extend %ProximaNovaBold;
+	@include font(34px, 36px, #fff, uppercase);
+	text-align: center;
+}
+
+.footer__sub-heading{
+	margin-bottom: 70px;
+
+	@include font(15px, 17px, #9b8dc3, uppercase);
+	text-align: center;
+	letter-spacing: 0.45px;
+}
+
+.footer__buttons{
+	margin-bottom: 125px;
+	padding: 0 5%;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer__download-button{
+	padding: 10px 0px;
+}
+
+.footer__bottom{
+	padding: 20px 0;
+
+	background-color: rgba(#0a0c35, .6);
+}
+
+.footer__bottom-logo{
+	display: none;
+}
+
+.footer__social{
+	margin: 0 auto;
+	width: 42.1%;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer__social-link{
+	line-height: 0;
+
+	&:hover{
+		opacity: .5;
+	}
+
+	&:active{
+		opacity: .3;
+	}
+}
+
+.footer__contact{
+	display: none;
+}
 
 @import "media";
